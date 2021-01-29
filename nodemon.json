@@ -1,0 +1,15 @@
+{
+    "restartable": "rs",
+    "ext": "js,ts",
+    "ignore": [
+        "dist",
+        "tmp",
+        "node_modules",
+        "**/*.spec.ts"
+    ],
+    "watch": [
+        "./src"
+    ],
+    "delay": 1000,
+    "exec": "node -r ts-node/register -r tsconfig-paths/register src/infra/http/server.ts"
+}
