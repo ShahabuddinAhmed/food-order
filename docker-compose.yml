@@ -5,15 +5,19 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: .
+    depends_on:
+      - db
     ports:
       - "3000:3000"
     volumes:
       - .:/server
     environment:
-      MYSQL_DATABASE: food_order
+      MYSQL_DATABASE: foodOrder
       MYSQL_USER: root
       MYSQL_PASSWORD: root
-      MYSQL_HOST: 0.0.0.0
+      MYSQL_HOST: db
+      JWT_SECRET_KEY: JWT_SECRET_KEY
+      ACCESS_TOKEN_EXPIRATION: 120h
       APPLICATION_SERVER_PORT: 3000
       APP_FORCE_SHUTDOWN_SECOND: 30
 
@@ -25,7 +29,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: food_order
+      MYSQL_DATABASE: foodOrder
       MYSQL_USER: root
       MYSQL_PASSWORD: root
 

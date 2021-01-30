@@ -4,7 +4,6 @@ import { ValueObject } from "../../../../shared/domain/ValueObject";
 interface OrderStatusProps {
     purpose: string;
 }
-
 export enum OrderStatusType {
     PROCESSING = "Processing",
     DELIVERED = "Delivered",

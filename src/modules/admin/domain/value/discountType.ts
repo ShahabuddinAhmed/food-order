@@ -4,7 +4,6 @@ import { ValueObject } from "../../../../shared/domain/ValueObject";
 interface DiscountProps {
     purpose: string;
 }
-
 export enum DiscountType {
     PERCENTAGE = "Percentage",
     FLAT = "Flat"

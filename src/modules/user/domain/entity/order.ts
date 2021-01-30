@@ -12,9 +12,10 @@ export interface OrderProps {
     discount: number;
     couponCode: string;
     couponValue: number;
-    deliveryCharge: number;
     orderStatus: OrderStatus;
     paymentStatus: PaymentStatus;
+    orderCode: string;
+    restaurantAddress: string;
     createdAt?: Date | string;
     updatedAt?: Date | string;
 }
@@ -48,16 +49,20 @@ export class Order extends Entity<OrderProps> {
         return this.props.couponValue;
     }
 
-    get deliveryCharge(): number {
-        return this.props.deliveryCharge;
-    }
-
     get orderStatus(): OrderStatus {
         return this.props.orderStatus;
     }
 
     get paymentStatus(): PaymentStatus {
         return this.props.paymentStatus;
+    }
+
+    get orderCode(): string {
+        return this.props.orderCode;
+    }
+    
+    get restaurantAddress(): string {
+        return this.props.restaurantAddress;
     }
 
     get createdAt(): Date | string | undefined {

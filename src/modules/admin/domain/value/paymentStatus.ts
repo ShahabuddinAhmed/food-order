@@ -4,7 +4,6 @@ import { ValueObject } from "../../../../shared/domain/ValueObject";
 interface PaymentStatusProps {
     purpose: string;
 }
-
 export enum PaymentStatusType {
     PAID = "Paid",
     UNPAID = "UnPaid"
