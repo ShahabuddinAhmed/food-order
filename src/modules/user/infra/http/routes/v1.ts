@@ -18,7 +18,7 @@ export const newUserRouter = (
 
     contactRouter.post("/create", (req, res) => createUserController.execute(req, res));
     contactRouter.post("/login", (req, res) => loginUserController.execute(req, res));
-    contactRouter.post("/order", authenticated, (req, res) => orderUserContactController.execute(req, res));
+    contactRouter.get("/order/list", authenticated, (req, res) => orderUserContactController.execute(req, res));
     contactRouter.patch("/update", authenticated, (req, res) => updateUserController.execute(req, res));
     contactRouter.delete("/delete", authenticated, (req, res) => deleteUderController.execute(req, res));
     contactRouter.post("/order/create", authenticated, (req, res) => createOrderController.execute(req, res));

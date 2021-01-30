@@ -27,7 +27,7 @@ export class UserRepo implements UserRepoInterface {
         const user = await UserModel.findOne({
             where: {
                 email
-            }
+            },
         });
         if (!user) {
             return null;

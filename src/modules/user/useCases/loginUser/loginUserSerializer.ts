@@ -2,10 +2,11 @@ import { User } from "../../domain/entity/user";
 import { LoginUserControllerResponseDTO } from "./loginUserDTO";
 
 export class LoginUserSerializer {
-    public static serialize(user: User | null, message: string | null, error: any): LoginUserControllerResponseDTO {
+    public static serialize(user: any | null, message: string | null, error: any): LoginUserControllerResponseDTO {
         if (user) {
+            const { password, ..._user } = user;
             return {
-                data: user,
+                data: _user,
                 message: message,
                 error: error,
             };

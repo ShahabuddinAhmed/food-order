@@ -16,8 +16,8 @@ export class OrderUserController extends BaseController {
 
     public async validateReq(req: Request): Promise<{ value: OrderUserUseCaseRequestDTO; error?: ValidationError }> {
         const schema = object().keys({
-            offset: string(),
-            limit: string()
+            offset: string().required(),
+            limit: string().required()
         });
 
         return schema.validate(req.query, { abortEarly: false, });

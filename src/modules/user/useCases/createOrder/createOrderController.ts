@@ -23,7 +23,7 @@ export class CreateOrderController extends BaseController {
             })).required()
         });
 
-        return schema.validate(req.query, { abortEarly: false, });
+        return schema.validate(req.body, { abortEarly: false, });
     }
 
     public async executeImpl(req: Request, res: Response): Promise<any> {
