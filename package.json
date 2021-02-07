@@ -1,7 +1,7 @@
 {
-    "name": "spring-rain-test-api",
+    "name": "food-order-api",
     "version": "1.0.0",
-    "description": "Spring Rain Test API",
+    "description": "Food Order API",
     "main": "app.ts",
     "scripts": {
         "dev": "nodemon",
